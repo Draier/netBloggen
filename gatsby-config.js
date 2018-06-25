@@ -4,6 +4,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-netlify-cms',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -12,7 +13,6 @@ module.exports = {
       }
     },
     'gatsby-transformer-remark',
-    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-netlify'
   ],
 }
