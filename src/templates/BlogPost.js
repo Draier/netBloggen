@@ -5,7 +5,7 @@ export default function Template({data}) {
 	const {markdownRemark : post} = data;
 
 	return (
-		<div>
+		<div className="content">
 			<Helmet
         title={"netBloggen | " + post.frontmatter.title}
         meta={[

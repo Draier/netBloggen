@@ -4,9 +4,11 @@ import Link from "gatsby-link"
 const IndexPage = ({data}) => {
 	console.log(data);
 	return (
-		<div>
-			<h1>Welcome to this blog</h1>
-			<div>
+			<div className = "content">
+				<h2>Welcome to netBloggen</h2>
+				<strong>Recent Posts</strong>
+
+
 				{data.allMarkdownRemark.edges.map(post => (
 					<Link to={post.node.fields.slug}>
 						<div>
@@ -16,7 +18,6 @@ const IndexPage = ({data}) => {
 					</Link>
 					))}
 			</div>
-		</div>
 	)
 }
 
