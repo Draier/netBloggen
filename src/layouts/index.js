@@ -9,7 +9,7 @@ const Header = () => (
   <div
     className="header"
     style={{
-      background: 'rebeccapurple',
+      background: '#047797',
     }}
   >
     <div
@@ -38,10 +38,16 @@ const Footer = () => (
 <div
     className="footer"
     style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
+      background: '#047797',
     }}
   >
+  <div
+      style={{
+        margin: '0 auto',
+        maxWidth: 960,
+        padding: '1.45rem 1.0875rem',
+      }}
+    >
    <h1 style={{ margin: 0 }}>
         <Link
           to="/"
@@ -53,6 +59,7 @@ const Footer = () => (
           netBloggen
         </Link>
       </h1>
+    </div>
 </div>
 
 )

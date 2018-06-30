@@ -1,21 +1,23 @@
 import React from "react"
 import Link from "gatsby-link"
+import './index.css'
 
 const IndexPage = ({data}) => {
 	console.log(data);
 	return (
 			<div className = "content">
-				<h2>Welcome to netBloggen</h2>
-				<strong>Recent Posts</strong>
-
-
 				{data.allMarkdownRemark.edges.map(post => (
-					<Link to={post.node.fields.slug}>
-						<div>
-							<h2>{post.node.frontmatter.title}</h2>
-							<p>{post.node.frontmatter.description}</p>
-						</div>
-					</Link>
+					<div className="Post">
+					<img className="thumbnail" src="https://cdn-images-1.medium.com/fit/t/1600/480/1*QO0sTki4wLIb9eUw-lCSZg.png" alt="placeholder"/>
+						<Link to={post.node.fields.slug}>
+							<h1 className="has-text-left Post-title">{post.node.frontmatter.title}</h1>
+						</Link>
+							<p className="Post-desc">
+							{post.node.frontmatter.description} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ipsum sunt magni illo dignissimos magnam delectus itaque earum sit dolorum hic, error ex? Sunt, dicta. Perspiciatis sunt provident voluptates, blanditiis.</p>
+							<Link to={post.node.fields.slug}>
+								<p className="readmore">Read More...</p>
+							</Link>
+					</div>
 					))}
 			</div>
 	)

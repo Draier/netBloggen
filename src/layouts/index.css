@@ -2,12 +2,9 @@
   margin: 0;
   padding: 0;
 }
-h2 {
-  text-align: left;
-}
+
 body {
-  font-family: 'Abel';
-  text-align: center;
+  font-family: 'Abel';  
   width: 100%;
 }
 
@@ -16,10 +13,6 @@ body {
   grid-gap: 10px;
   grid-template-columns: [head-col-start] 1fr [content-col-start] 1fr [content-col-mid] 0.7fr [head-col-end];
   grid-template-rows: [head-row-start] auto [head-row-end] auto [content-row-end] auto [footer-row-end];
-}
-
-.footer {
-  background: #90d;
 }
 
 .header {
