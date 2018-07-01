@@ -12,6 +12,12 @@ module.exports = {
         name: 'blog_posts',
       }
     },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     'gatsby-transformer-remark',
     'gatsby-plugin-netlify'
   ],

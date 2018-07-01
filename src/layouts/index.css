@@ -1,11 +1,14 @@
+html{
+  background-color: #047797
+}
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Abel';  
   width: 100%;
+  color: #B7B7B7FF;
 }
 
 .container {

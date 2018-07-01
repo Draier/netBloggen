@@ -9,7 +9,7 @@ const Header = () => (
   <div
     className="header"
     style={{
-      background: '#047797',
+      background: '#024153',
     }}
   >
     <div
@@ -38,7 +38,7 @@ const Footer = () => (
 <div
     className="footer"
     style={{
-      background: '#047797',
+      background: '#024153',
     }}
   >
   <div
