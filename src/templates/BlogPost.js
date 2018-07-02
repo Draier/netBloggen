@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import './BlogPost.css'
+import {format} from 'date-fns';
+import './BlogPost.css';
 
 export default function Template({data}) {
 	const {markdownRemark : post} = data;
@@ -14,11 +15,10 @@ export default function Template({data}) {
           { name: 'keywords', content: 'sample, something' },
         ]}
       />
-      <img className="thumbnail" src="https://cdn-images-1.medium.com/fit/t/1600/480/1*QO0sTki4wLIb9eUw-lCSZg.png" alt="placeholder"/>
+      <img className="thumbnail" src={post.frontmatter.thumbnail ?  post.frontmatter.thumbnail : "https://cdn-images-1.medium.com/fit/t/1600/480/1*QO0sTki4wLIb9eUw-lCSZg.png"} alt="placeholder"/>
 			<h1>{post.frontmatter.title}</h1>
-			<p>{post.frontmatter.description}</p>
-			<p>Published {post.frontmatter.date}</p>
-			<div dangerouslySetInnerHTML={{__html: post.html}} />
+			<p>Published {format(post.frontmatter.date, "MMM 	D[,] YYYY")}</p>
+			<div className="Blog-Body" dangerouslySetInnerHTML={{__html: post.html}} />
 		</div>
 		)
 }
@@ -31,6 +31,7 @@ export const postQuery = graphql`
 				title
 				description
 				date
+				thumbnail
 			}
 		}
 	}

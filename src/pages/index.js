@@ -7,8 +7,12 @@ const IndexPage = ({data}) => {
 	return (
 			<div className = "content">
 				{data.allMarkdownRemark.edges.map(post => (
-					<div className="Post">
-					<img className="thumbnail" src="https://cdn-images-1.medium.com/fit/t/1600/480/1*QO0sTki4wLIb9eUw-lCSZg.png" alt="placeholder"/>
+					<div className="Post">	
+						<img 
+							className="thumbnail" 
+							src={post.node.frontmatter.thumbnail ?  post.node.frontmatter.thumbnail : "https://cdn-images-1.medium.com/fit/t/1600/480/1*QO0sTki4wLIb9eUw-lCSZg.png"} 
+							alt="placeholder"
+						/>
 						<Link to={post.node.fields.slug}>
 							<h1 className="has-text-left Post-title">{post.node.frontmatter.title}</h1>
 						</Link>
@@ -38,6 +42,7 @@ export const PaginatorQuery = graphql`
 	          title
 	          description
 	          date
+	          thumbnail
 	        }
 	      }
 	    }
