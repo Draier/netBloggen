@@ -25,7 +25,10 @@ const IndexPage = ({data}) => {
 
 export const PaginatorQuery = graphql`
 	query IndexQuery {
-	  allMarkdownRemark(limit: 10){
+	  allMarkdownRemark(
+	  	limit: 10
+			sort: { fields: [frontmatter___date], order: DESC}
+	  	){
 	    edges{
 	      node {
 	        fields {
@@ -34,6 +37,7 @@ export const PaginatorQuery = graphql`
 	        frontmatter{
 	          title
 	          description
+	          date
 	        }
 	      }
 	    }
