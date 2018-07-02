@@ -8,6 +8,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
+    "date-fns": "^1.29.0",
     "gatsby": "^1.9.273",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-netlify": "^1.0.21",
@@ -19,5 +20,8 @@
     "netlify-cms": "^1.9.2",
     "react-helmet": "^5.2.0",
     "typography-theme-grand-view": "^0.15.10"
+  },
+  "devDependencies": {
+    "@andrew-codes/gatsby-plugin-elasticlunr-search": "^1.0.4"
   }
 }

@@ -1,9 +1,9 @@
 import React from "react"
 import Link from "gatsby-link"
+import {format} from 'date-fns'
 import './index.css'
 
 const IndexPage = ({data}) => {
-	console.log(data);
 	return (
 			<div className = "content">
 				{data.allMarkdownRemark.edges.map(post => (
