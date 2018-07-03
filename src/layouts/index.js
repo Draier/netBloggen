@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import './index.css';
-import Search from './../components/search';
 import icon from './icon.png'
 
 const Header = () => (
@@ -29,7 +28,6 @@ const Header = () => (
           }}
         >
           netBloggen
-          <Search />
         </Link>
       </h1>
     </div>
@@ -81,9 +79,6 @@ const TemplateWrapper = ({children}) => (
         }]}
       />
       <Header />
-      <div className="sidebar">
-      SIDEBAR
-      </div>
         {children()}
       <Footer/>
     </div>
