@@ -2,11 +2,11 @@
 	text-align: left;
 }
 .Post{
-	margin-left: 2%;
+	margin: 0 auto;
 	padding: 3%;
 	padding-bottom: 0;
 	border-bottom: 2px #536EDF solid;
-	width: 80%;
+	width: 60%;
 }
 .Post-title{
 	color: #FFFF;
