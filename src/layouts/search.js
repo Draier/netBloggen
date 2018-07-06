@@ -1,15 +1,6 @@
 import React, {Component} from 'react';
 import {Index} from 'elasticlunr';
 
-// Graphql query used to retrieve the serialized search index.
-export const query = graphql`query
-SearchIndexQuery {
-    siteSearchIndex {
-      index
-    }
-}`;
-
-// Search component
 export default class Search extends Component {
     constructor(props) {
         super(props);

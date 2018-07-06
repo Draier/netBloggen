@@ -29,21 +29,38 @@ export default class IndexPage extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			postsArray : this.props.data.allMarkdownRemark.edges,
+			dataArray : this.props.data.allMarkdownRemark.edges,
+			postsArray : [],
 			actualPagePosts : [],
 			page : 1
 		}
 	}
 
-	limitPostArray = () => {
+	divideDataArray = () => {
+		//Divide the data in arrays of 10 posts and push them in an array of arrays
+		//for easier pagination
+		let dataArray = this.state.dataArray;
+		let arrayOfArrays = [];
 		let tempArray = [];
-		let arrayToBeLimited = this.state.postsArray;
-		for(let x = 0; x < this.state.page * 10; x++){
-			if(arrayToBeLimited[x])
-				tempArray.push(arrayToBeLimited[x]);
+
+		for(let x = 0; x < dataArray.length; x++){
+			tempArray.push(dataArray[x]);
+
+			if(tempArray.length >= 10){
+				arrayOfArrays.push(tempArray);
+				tempArray = [];
+			}
 		}
+		//In case the cycle didn't match the length we push one last time
+		arrayOfArrays.push(tempArray);
 		this.setState({
-			actualPagePosts : tempArray 
+			postsArray:arrayOfArrays,
+		});
+	}
+
+	setPostsOfTheCurrentPage = () => {
+		this.setState({
+			actualPagePosts : this.state.postsArray[this.state.page - 1] 
 		});
 	}
 
@@ -51,13 +68,26 @@ export default class IndexPage extends React.Component {
 		let newPage = direction == "next" ? this.state.page + 1 : this.state.page - 1;
 		this.setState({
 			page:newPage, 
-		});
+		},() => this.setPostsOfTheCurrentPage() );
+		
+	}
+
+	componentWillMount() {
+		this.divideDataArray();
+	}
+
+	componentDidMount() {
+		this.setPostsOfTheCurrentPage();
 	}
 
 	render(){
-		this.limitPostArray();
 		return(
 			<div className="content">
+				<div>
+					<button disabled={ this.state.page <= 1} onClick={() => this.handleClick('back')}>&larr;</button>
+					<span>Page {this.state.page} of {Math.ceil(this.state.dataArray.length / 10)}</span>
+					<button onClick={() => this.handleClick('next')} disabled={ this.state.page >= Math.ceil(this.state.dataArray.length / 10)}>&rarr;</button>
+				</div>
 				{this.state.actualPagePosts.map(post=>(
 					<div key={post.node.fields.slug} className="Post">	
 						<img 
@@ -77,10 +107,10 @@ export default class IndexPage extends React.Component {
 					))}
 				<div>
 					<button disabled={ this.state.page <= 1} onClick={() => this.handleClick('back')}>&larr;</button>
-					<span>Page {this.state.page} of {Math.ceil(this.state.postsArray.length / 10)}</span>
-					<button onClick={() => this.handleClick('next')} disabled={ this.state.page >= Math.ceil(this.state.postsArray.length / 10)}>&rarr;</button>
+					<span>Page {this.state.page} of {Math.ceil(this.state.dataArray.length / 10)}</span>
+					<button onClick={() => this.handleClick('next')} disabled={ this.state.page >= Math.ceil(this.state.dataArray.length / 10)}>&rarr;</button>
 				</div>
 			</div>
-		)
+		);
 }
 };
