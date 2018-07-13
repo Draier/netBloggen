@@ -90,11 +90,11 @@ export default class IndexPage extends React.Component {
 				</div>
 				{this.state.actualPagePosts.map(post=>(
 					<div key={post.node.fields.slug} className="Post">	
-						<img 
+						{post.node.frontmatter.thumbnail ? (<img 
 							className="thumbnail" 
-							src={post.node.frontmatter.thumbnail ?  post.node.frontmatter.thumbnail : "https://cdn-images-1.medium.com/fit/t/1600/480/1*QO0sTki4wLIb9eUw-lCSZg.png"} 
+							src={post.node.frontmatter.thumbnail} 
 							alt="placeholder"
-						/>
+						/>) : (<div></div>)}
 						<Link to={post.node.fields.slug}>
 							<h1 className="has-text-left Post-title">{post.node.frontmatter.title}</h1>
 						</Link>

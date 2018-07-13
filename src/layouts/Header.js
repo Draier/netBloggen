@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import Search from './search.js';
+import Search from '../pages/search.js';
 
-const Header = ({data}) => (
+const Header = () => (
   <div
     className="header"
     style={{
@@ -28,16 +28,7 @@ const Header = ({data}) => (
         </Link>
       </h1>
     </div>
-    <Search data={data}/>
   </div>
 )
-
-export const query = graphql`query
-SearchIndexQuery {
-    siteSearchIndex {
-      index
-    }
-}`;
-
 
 export default Header;

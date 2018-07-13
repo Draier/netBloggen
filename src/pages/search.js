@@ -1,6 +1,15 @@
 import React, {Component} from 'react';
 import {Index} from 'elasticlunr';
 
+
+export const pageQuery  = graphql`
+  query SearchIndexQuery {
+    siteSearchIndex {
+      index
+    }
+}`;
+
+
 export default class Search extends Component {
     constructor(props) {
         super(props);
