@@ -11,9 +11,10 @@ const Header = () => (
   >
     <div
       style={{
+        marginBottom: '0',
         margin: '0 auto',
         maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
+        padding: '1.45rem 0',
       }}
     >
       <h1 style={{ margin: 0 }}>
@@ -27,6 +28,18 @@ const Header = () => (
           netBloggen
         </Link>
       </h1>
+      
+        
+              <div><Link to="/search"
+              style={{
+                cssFloat: 'right',
+                background: '#024153',
+                color: 'white',
+
+              }}
+            >Search</Link></div>
+
+
     </div>
   </div>
 )

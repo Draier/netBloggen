@@ -83,11 +83,6 @@ export default class IndexPage extends React.Component {
 	render(){
 		return(
 			<div className="content">
-				<div>
-					<button disabled={ this.state.page <= 1} onClick={() => this.handleClick('back')}>&larr;</button>
-					<span>Page {this.state.page} of {Math.ceil(this.state.dataArray.length / 10)}</span>
-					<button onClick={() => this.handleClick('next')} disabled={ this.state.page >= Math.ceil(this.state.dataArray.length / 10)}>&rarr;</button>
-				</div>
 				{this.state.actualPagePosts.map(post=>(
 					<div key={post.node.fields.slug} className="Post">	
 						{post.node.frontmatter.thumbnail ? (<img 
@@ -105,10 +100,11 @@ export default class IndexPage extends React.Component {
 							</Link>
 					</div>
 					))}
-				<div>
-					<button disabled={ this.state.page <= 1} onClick={() => this.handleClick('back')}>&larr;</button>
-					<span>Page {this.state.page} of {Math.ceil(this.state.dataArray.length / 10)}</span>
-					<button onClick={() => this.handleClick('next')} disabled={ this.state.page >= Math.ceil(this.state.dataArray.length / 10)}>&rarr;</button>
+
+				<div className="arrows">
+					<button className="pag-arrows" disabled={ this.state.page <= 1} onClick={() => this.handleClick('back')}>&larr;</button>
+					<span className="pages">Page {this.state.page} of {Math.ceil(this.state.dataArray.length / 10)}</span>
+					<button className="pag-arrows" onClick={() => this.handleClick('next')} disabled={ this.state.page >= Math.ceil(this.state.dataArray.length / 10)}>&rarr;</button>
 				</div>
 			</div>
 		);

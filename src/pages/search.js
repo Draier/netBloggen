@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import Link from "gatsby-link"
+import Helmet from 'react-helmet';
 import {Index} from 'elasticlunr';
+import './search.css'
 
 
 export const pageQuery  = graphql`
@@ -20,14 +23,35 @@ export default class Search extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <input type="text" value={this.state.query} onChange={this.search}/>
+        return (   
+            <div className="content">
+                <Helmet
+                    title={"netBloggen | Search"}
+                    meta={[
+                      { name: 'description', content: 'Search Page' },
+                      { name: 'keywords', content: 'search, blog' },
+                    ]}
+                />
+                <div className="search-bar">
+                    <input placeholder="Enter your search term here" type="text" value={this.state.query} onChange={this.search}/>
+                </div>
                 <ul>
-                    {this.state.results.map(page => (
-                        <li>
-                            {page.title}: {page.tags.join(`,`)}
-                        </li>
+                    {this.state.results.map(post=>(
+                    <div key={post.link} className="Post">  
+                        {post.thumbnail ? (<img 
+                            className="thumbnail" 
+                            src={post.thumbnail} 
+                            alt="placeholder"
+                        />) : (<div></div>)}
+                        <Link to={post.link}>
+                            <h1 className="has-text-left Post-title">{post.title}</h1>
+                        </Link>
+                            <p className="Post-desc">
+                            {post.description} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ipsum sunt magni illo dignissimos magnam delectus itaque earum sit dolorum hic, error ex? Sunt, dicta. Perspiciatis sunt provident voluptates, blanditiis.</p>
+                            <Link to={post.link}>
+                                <p className="readmore">Read More...</p>
+                            </Link>
+                    </div>
                     ))}
                 </ul>
             </div>

@@ -5,11 +5,10 @@ import './BlogPost.css';
 
 export default function Template({data}) {
 	const {markdownRemark : post} = data;
-
 	return (
 		<div className="content blog-post">
 			<Helmet
-        title={"netBloggen | " + post.frontmatter.title}
+        title={post.frontmatter.title + "| netBloggen"}
         meta={[
           { name: 'description', content: 'Sample' },
           { name: 'keywords', content: 'sample, something' },
