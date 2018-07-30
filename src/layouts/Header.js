@@ -30,16 +30,9 @@ const Header = () => (
       </h1>
       
         
-              <div><Link to="/search"
-              style={{
-                cssFloat: 'right',
-                background: '#024153',
-                color: 'white',
-
-              }}
-            >Search</Link></div>
-
-
+      <div>
+        <Link className="search" to="/search">Search</Link>
+      </div>
     </div>
   </div>
 )

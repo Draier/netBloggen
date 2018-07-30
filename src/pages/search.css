@@ -1,3 +1,8 @@
+.search{
+	float: right;
+  background:#024153;
+  color: white;
+}
 .search-bar{
 	margin-top: 20px;
 	text-align: center;
