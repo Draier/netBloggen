@@ -1,7 +1,7 @@
-.search{
+#search{
 	float: right;
-  background:#024153;
   color: white;
+  font-family: Montserrat;
 }
 .search-bar{
 	margin-top: 20px;
