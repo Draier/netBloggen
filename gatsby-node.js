@@ -51,3 +51,15 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     }
 }
 
+exports.onCreatePage = async ({ page, boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
+
+  return new Promise((resolve, reject) => {
+    // It's assumed that `landingPage.js` exists in the `/layouts/` directory
+    page.layout = "layout-sidebar";
+    // Update the page.
+    createPage(page);
+    resolve();
+  });
+};
+

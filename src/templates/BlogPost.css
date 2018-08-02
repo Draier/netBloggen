@@ -6,3 +6,9 @@ h1, h2, h3, h4, h5, h6{
 .blog-post{
 	margin-left: 1%;
 }
+
+.Blog-Body>img{
+	padding: 5px 10px 5px 10px;
+	max-height: 400px;
+	width: 100%;
+}

@@ -1,5 +1,6 @@
 html{
-  background-color: #047797
+  background-color: #047797;
+  height: 100%;
 }
 * {
   margin: 0;
@@ -8,8 +9,8 @@ html{
 
 body {
   width: 100%;
+  height: 100%;
   color: #B7B7B7FF;
-  
 }
 
 .container {
@@ -25,10 +26,18 @@ body {
    /* autoprefixer: off */
 }
 
+.sidebar {
+  background: #d90;
+  grid-column: head-col-start / content-col-start;
+  grid-row: head-row-end / content-row-end;
+}
+
 .content {
   grid-column: head-col-start / head-col-end;
   grid-row: head-row-end / content-row-end;
    /* autoprefixer: off */
+  min-height: 424px;
+  height: 100%;
 }
 
 .footer {
