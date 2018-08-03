@@ -10,14 +10,15 @@ html{
 body {
   width: 100%;
   height: 100%;
-  color: #B7B7B7FF;
+  color: white;
 }
 
 .container {
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: [head-col-start] 1fr [content-col-start] 1fr [content-col-mid] 1fr [head-col-end];
+  grid-gap: 15px;
+  grid-template-columns: [head-col-start] 1fr [content-col-start] 1fr [content-col-mid] 0.7fr [head-col-end];
   grid-template-rows: [head-row-start] auto [head-row-end] auto [content-row-end] auto [footer-row-end];
+   /* autoprefixer: off */
 }
 
 .header {
@@ -28,8 +29,9 @@ body {
 
 .sidebar {
   background: #d90;
-  grid-column: head-col-start / content-col-start;
+  grid-column: content-col-mid / head-col-end;
   grid-row: head-row-end / content-row-end;
+   /* autoprefixer: off */
 }
 
 .content {
@@ -38,6 +40,13 @@ body {
    /* autoprefixer: off */
   min-height: 424px;
   height: 100%;
+}
+
+.content-s{
+  grid-column: head-col-start / content-col-mid;
+  grid-row: head-row-end / content-row-end;
+  /* autoprefixer: off */
+  padding: 1%;
 }
 
 .footer {

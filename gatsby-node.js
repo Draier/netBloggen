@@ -32,7 +32,8 @@ exports.createPages = ({boundActionCreators, graphql}) => {
     res.data.allMarkdownRemark.edges.forEach(({node}) => {
       createPage({
         path: node.fields.slug,
-        component: postTemplate
+        component: postTemplate,
+        layout : 'layout-sidebar'
       })
     })
 
@@ -46,20 +47,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value : `/b${value}`,
     });
     }
 }
-
-exports.onCreatePage = async ({ page, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
-
-  return new Promise((resolve, reject) => {
-    // It's assumed that `landingPage.js` exists in the `/layouts/` directory
-    page.layout = "layout-sidebar";
-    // Update the page.
-    createPage(page);
-    resolve();
-  });
-};
-

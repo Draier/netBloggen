@@ -22,8 +22,8 @@ const TemplateWrapper = ({children}) => (
         }]}
       />
       <Header />
-        {children()}
       <Sidebar />
+        {children()}
       <Footer/>
     </div>
 )
@@ -31,3 +31,5 @@ const TemplateWrapper = ({children}) => (
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
 }
+
+export default TemplateWrapper;
