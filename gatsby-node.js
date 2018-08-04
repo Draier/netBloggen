@@ -33,7 +33,6 @@ exports.createPages = ({boundActionCreators, graphql}) => {
       createPage({
         path: node.fields.slug,
         component: postTemplate,
-        layout : 'layout-sidebar'
       })
     })
 

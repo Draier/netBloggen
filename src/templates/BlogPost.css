@@ -4,18 +4,31 @@ h1, h2, h3, h4, h5, h6{
 }
 #blog-title{
 	margin-bottom: 0;
+	font-size: 41px;
 }
 #subtitle{
 	margin-top: 0;
 	text-align: right;
 	color: #C9C9C9FF;
 }
-.blog-post{
-	margin-left: 1%;
+.thumb-container{
+	margin: 0 auto;
+	width: 75%;
 }
-
+.thumbnail-in-post{
+	width: 100%;
+	height: 250px;
+	margin: 0;
+}
+.blog-post{
+	width: 60%;
+	margin: 0 auto;
+}
+.Blog-Body{
+	font-size: 21px;
+}
 .Blog-Body>p{
-	width: 95%;
+	width: 100%;
 }
 p>img{
 	padding: 0;

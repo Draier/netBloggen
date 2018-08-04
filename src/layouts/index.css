@@ -6,7 +6,6 @@ html{
   margin: 0;
   padding: 0;
 }
-
 body {
   width: 100%;
   height: 100%;
@@ -27,13 +26,6 @@ body {
    /* autoprefixer: off */
 }
 
-.sidebar {
-  background: #d90;
-  grid-column: content-col-mid / head-col-end;
-  grid-row: head-row-end / content-row-end;
-   /* autoprefixer: off */
-}
-
 .content {
   grid-column: head-col-start / head-col-end;
   grid-row: head-row-end / content-row-end;
@@ -41,14 +33,6 @@ body {
   min-height: 424px;
   height: 100%;
 }
-
-.content-s{
-  grid-column: head-col-start / content-col-mid;
-  grid-row: head-row-end / content-row-end;
-  /* autoprefixer: off */
-  padding: 1%;
-}
-
 .footer {
   grid-column: head-col-start / head-col-end;
   grid-row: content-row-end / footer-row-end;
