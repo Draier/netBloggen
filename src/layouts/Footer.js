@@ -6,7 +6,7 @@ const Footer = () => (
 <div
     className="footer"
     style={{
-      background: '#024153',
+      background: '#172945',
     }}
   >
   <div

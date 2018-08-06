@@ -15,7 +15,10 @@ export default function Template({data}) {
 		        ]}
 		      />
 		  <div className="thumb-container">
-		  	<img className="thumbnail-in-post" src={post.frontmatter.thumbnail ?  post.frontmatter.thumbnail : "https://cdn-images-1.medium.com/fit/t/1600/480/1*QO0sTki4wLIb9eUw-lCSZg.png"} alt="placeholder"/>
+		  	{post.frontmatter.thumbnail ? (<img 
+		  		className="thumbnail-in-post" 
+		  		src={post.frontmatter.thumbnail} 
+		  		alt="placeholder"/>) : (<div></div>)}
 		  </div>
 			<div className="blog-post">
 				<h1 id="blog-title">{post.frontmatter.title}</h1>

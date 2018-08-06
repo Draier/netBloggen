@@ -6,7 +6,7 @@ const Header = () => (
   <div
     className="header"
     style={{
-      background: '#024153',
+      background: '#172945',
     }}
   >
     <div

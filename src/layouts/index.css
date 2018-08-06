@@ -1,5 +1,5 @@
 html{
-  background-color: #047797;
+  background-color: #0A131F;
   height: 100%;
 }
 * {
@@ -9,7 +9,7 @@ html{
 body {
   width: 100%;
   height: 100%;
-  color: white;
+  color: #C4C4C4FF;
 }
 
 .container {
