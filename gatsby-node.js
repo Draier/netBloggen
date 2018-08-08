@@ -46,7 +46,20 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value : `/b${value}`,
+      value,
     });
     }
 }
+
+exports.onCreatePage = async ({ page, boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
+
+  // page.matchPath is a special key that's used for matching pages
+  // only on the client.
+  if (page.path.match(/^\/search/)) {
+    page.matchPath = "/search/:path";
+
+    // Update the page.
+    createPage(page);
+  }
+};

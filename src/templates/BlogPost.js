@@ -8,10 +8,10 @@ export default function Template({data}) {
 	return (
 		<div className="content">
 			<Helmet
-		        title={post.frontmatter.title + "| netBloggen"}
+		        title={post.frontmatter.title + " | netBloggen"}
 		        meta={[
 		          { name: 'description', content: 'Sample' },
-		          { name: 'keywords', content: 'sample, something' },
+		          { name: 'keywords', content: 'sample, blog, blogpost' },
 		        ]}
 		      />
 		  <div className="thumb-container">
@@ -24,6 +24,7 @@ export default function Template({data}) {
 				<h1 id="blog-title">{post.frontmatter.title}</h1>
 				<p id="subtitle">{format(post.frontmatter.date, "MMM 	D[,] YYYY")}</p>
 				<div className="Blog-Body" dangerouslySetInnerHTML={{__html: post.html}} />
+				<div>{post.frontmatter.tags.join(', ')}</div>
 			</div>
 		</div>
 		)
@@ -37,6 +38,7 @@ export const postQuery = graphql`
 				title
 				description
 				date
+				tags
 				thumbnail
 			}
 		}

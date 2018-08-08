@@ -31,7 +31,7 @@ const Header = () => (
       
         
       <div>
-        <Link id="search" to="/search">Search</Link>
+        <Link id="search" to="/search/:id">Search</Link>
       </div>
     </div>
   </div>

@@ -19,6 +19,10 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/search/*`] },
+    },
+    {
             resolve: `@andrew-codes/gatsby-plugin-elasticlunr-search`,
             options: {
                 // Fields to index
