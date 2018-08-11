@@ -13,10 +13,15 @@ const Footer = () => (
       style={{
         margin: '0 auto',
         maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
+        paddingTop : '0.7rem',
+        padding: '0.7rem 0 1rem 0',
       }}
     >
-   <h1 style={{ margin: 0 }}>
+    <div className="search">
+        
+    </div> 
+   <h1 style={{ 
+        margin: 0 }}>
         <Link
           to="/"
           style={{

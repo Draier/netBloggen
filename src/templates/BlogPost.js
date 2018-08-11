@@ -22,9 +22,13 @@ export default function Template({data}) {
 		  </div>
 			<div className="blog-post">
 				<h1 id="blog-title">{post.frontmatter.title}</h1>
-				<p id="subtitle">{format(post.frontmatter.date, "MMM 	D[,] YYYY")}</p>
+				<p className="subtitle">{format(post.frontmatter.date, "MMM 	D[,] YYYY")}</p>
 				<div className="Blog-Body" dangerouslySetInnerHTML={{__html: post.html}} />
-				<div>{post.frontmatter.tags.join(', ')}</div>
+				
+				<div className="subtitle">
+					<h2 className="tags">Keywords</h2>
+					{post.frontmatter.tags.join(', ')}
+				</div>
 			</div>
 		</div>
 		)

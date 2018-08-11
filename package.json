@@ -9,9 +9,8 @@
   },
   "dependencies": {
     "date-fns": "^1.29.0",
-    "gatsby": "^1.9.273",
+    "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.40",
-    "gatsby-plugin-create-client-paths": "^1.0.8",
     "gatsby-plugin-netlify": "^1.0.21",
     "gatsby-plugin-netlify-cms": "^2.0.1",
     "gatsby-plugin-react-helmet": "^2.0.11",
@@ -19,6 +18,7 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
     "netlify-cms": "^1.9.2",
+    "npm": "^6.3.0",
     "react-helmet": "^5.2.0",
     "typography-theme-grand-view": "^0.15.10"
   },

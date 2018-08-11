@@ -49,9 +49,9 @@ export default class Search extends Component {
                         </Link>
                             <p className="Post-desc">
                             {post.description} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ipsum sunt magni illo dignissimos magnam delectus itaque earum sit dolorum hic, error ex? Sunt, dicta. Perspiciatis sunt provident voluptates, blanditiis.</p>
-                            <Link to={post.link}>
-                                <p className="readmore">Read More...</p>
-                            </Link>
+                            <p className="readmore">
+                                <Link to={post.link}>Read More...</Link>
+                            </p>
                     </div>
                     ))}
                 </ul>
