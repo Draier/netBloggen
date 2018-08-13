@@ -14,3 +14,26 @@
 	border: none;
 	padding: 4px 10px 4px 10px;
 }
+.social-container{
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+}
+li {
+	display:inline;
+	margin: 0 5px 0 5px;
+}
+.io-cont{
+	align-items: center;
+	display: inline-flex;
+	justify-content: center;
+	height: 1.5rem;
+	width: 1.5rem;
+}
+.io-cont > svg {
+	max-height: 100%;
+	max-width: 100%;
+	width: 2.25em;
+	height: 2.25em;
+}
+
